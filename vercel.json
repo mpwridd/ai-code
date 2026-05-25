@@ -2,9 +2,4 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "env": {
-    "MIMO_API_BASE_URL": "@mimo-api-base-url",
-    "MIMO_API_KEY": "@mimo-api-key",
-    "MIMO_MODEL": "@mimo-model"
-  }
 }
