@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --editor-bg: #fafafa;
+  --editor-surface: #ffffff;
+  --editor-border: #e5e7eb;
+  --editor-text: #111827;
+  --editor-muted: #6b7280;
+  --editor-accent: #6366f1;
+}
+
+.dark {
+  --editor-bg: #0a0a0f;
+  --editor-surface: #12121a;
+  --editor-border: #1e1e2e;
+  --editor-text: #e4e4e7;
+  --editor-muted: #71717a;
+  --editor-accent: #818cf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--editor-bg);
+  color: var(--editor-text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--editor-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--editor-muted);
+}
+
+/* Textarea styling */
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: var(--editor-border) transparent;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--editor-accent);
+  color: white;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Writing mode for vertical text */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Gradient text */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Animation utilities */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Prose styling for explanations */
+.prose {
+  line-height: 1.75;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--editor-text);
+}
+
+.prose h1 {
+  font-size: 1.5rem;
+}
+
+.prose h2 {
+  font-size: 1.25rem;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+}
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+.prose code {
+  background-color: var(--editor-surface);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.prose pre {
+  background-color: var(--editor-surface);
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.25em;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--editor-text);
+}
+
+.prose a {
+  color: var(--editor-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--editor-accent);
+  outline-offset: 2px;
+}
+
+/* Transition defaults */
+button,
+a,
+input,
+textarea {
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

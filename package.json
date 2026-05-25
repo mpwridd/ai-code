@@ -1,0 +1,32 @@
+{
+  "name": "ai-code",
+  "version": "1.0.0",
+  "description": "AI Code Generator powered by Mimo V2.5 Pro",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.29",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "openai": "^4.77.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "framer-motion": "^11.18.0",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-syntax-highlighter": "^15.5.11",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33"
+  }
+}
