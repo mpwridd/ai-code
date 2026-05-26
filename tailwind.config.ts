@@ -1,47 +1,12 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  darkMode: "class",
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        editor: {
-          bg: "var(--editor-bg)",
-          surface: "var(--editor-surface)",
-          border: "var(--editor-border)",
-          text: "var(--editor-text)",
-          muted: "var(--editor-muted)",
-          accent: "var(--editor-accent)",
-        },
-      },
-      fontFamily: {
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
-      },
-      animation: {
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "gradient-shift": "gradient-shift 3s ease infinite",
-        "typing": "typing 1s steps(3) infinite",
-      },
-      keyframes: {
-        "gradient-shift": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
-        typing: {
-          "0%": { opacity: "0" },
-          "50%": { opacity: "1" },
-          "100%": { opacity: "0" },
-        },
+        terminal: { 50:'#f0fdf4', 100:'#dcfce7', 200:'#bbf7d0', 300:'#86efac', 400:'#4ade80', 500:'#22c55e', 600:'#16a34a', 700:'#15803d', 800:'#166534', 900:'#14532d' },
       },
     },
   },
-  plugins: [],
-};
-
-export default config;
+  plugins: [];
